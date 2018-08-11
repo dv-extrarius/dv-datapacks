@@ -2,7 +2,7 @@ scoreboard players add glowingTimer glowTimer 1
 execute unless score glowingTimer glowTimer matches 0..2 run scoreboard players set glowingTimer glowTimer 0
 
 execute if score glowingTimer glowTimer matches 0 run scoreboard players add waveGlowTimer glowTimer 1
-execute if score glowingTimer glowTimer matches 0 unless score waveGlowTimer glowTimer matches 0..15 run scoreboard players set waveGlowTimer glowTimer 0
+execute if score glowingTimer glowTimer matches 0 unless score waveGlowTimer glowTimer matches 0..17 run scoreboard players set waveGlowTimer glowTimer 0
 
 tag @e[tag=madeGlowing] add stopGlowing
 tag @e[tag=stopGlowing,tag=madeGlowing] remove madeGlowing

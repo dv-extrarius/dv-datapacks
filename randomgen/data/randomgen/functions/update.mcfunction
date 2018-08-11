@@ -1,47 +1,37 @@
-scoreboard players operation seed1 randgen *= SeedMultiplier Constant
-scoreboard players operation seed1 randgen += StreamAddend1 Constant
-scoreboard players operation rand1 randgen = seed1 randgen
-scoreboard players operation rand1 randgen /= RandDivisor Constant
-scoreboard players operation rand1 randgen += RandDivisor Constant
-scoreboard players operation rand1 randgen %= RandDivisor Constant
+#First Generator Pair
+function randomgen:details/update1
 
-scoreboard players operation seed2 randgen *= SeedMultiplier Constant
-scoreboard players operation seed2 randgen += StreamAddend2 Constant
-scoreboard players operation rand2 randgen = seed2 randgen
-scoreboard players operation rand2 randgen /= RandDivisor Constant
-scoreboard players operation rand2 randgen += RandDivisor Constant
-scoreboard players operation rand2 randgen %= RandDivisor Constant
+#Second Generator Pair
+scoreboard players add timer2 rndgenTimer 1
+execute unless score timer2 rndgenTimer matches 0..1 run scoreboard players set timer2 rndgenTimer 0
+execute if score timer2 rndgenTimer matches 0 run function randomgen:details/update2
 
-scoreboard players operation seed3 randgen *= SeedMultiplier Constant
-scoreboard players operation seed3 randgen += StreamAddend3 Constant
-scoreboard players operation rand3 randgen = seed3 randgen
-scoreboard players operation rand3 randgen /= RandDivisor Constant
-scoreboard players operation rand3 randgen += RandDivisor Constant
-scoreboard players operation rand3 randgen %= RandDivisor Constant
+#Third Generator Pair
+scoreboard players add timer3 rndgenTimer 1
+execute unless score timer3 rndgenTimer matches 0..3 run scoreboard players set timer3 rndgenTimer 0
+execute if score timer3 rndgenTimer matches 0 run function randomgen:details/update3
 
-scoreboard players operation seed4 randgen *= SeedMultiplier Constant
-scoreboard players operation seed4 randgen += StreamAddend4 Constant
-scoreboard players operation rand4 randgen = seed4 randgen
-scoreboard players operation rand4 randgen /= RandDivisor Constant
-scoreboard players operation rand4 randgen += RandDivisor Constant
-scoreboard players operation rand4 randgen %= RandDivisor Constant
+#Combine Generators
+scoreboard players operation random rndgenVariable = rand1A rndgenVariable
+scoreboard players operation random rndgenVariable += rand2A rndgenVariable
+scoreboard players operation random rndgenVariable += rand3A rndgenVariable
+scoreboard players operation random rndgenVariable *= RandDivisor rndgenConstant
+scoreboard players operation random rndgenVariable += rand1B rndgenVariable
+scoreboard players operation random rndgenVariable += rand2B rndgenVariable
+scoreboard players operation random rndgenVariable += rand3B rndgenVariable
 
-scoreboard players operation seed5 randgen *= SeedMultiplier Constant
-scoreboard players operation seed5 randgen += StreamAddend5 Constant
-scoreboard players operation rand5 randgen = seed5 randgen
-scoreboard players operation rand5 randgen /= RandDivisor Constant
-scoreboard players operation rand5 randgen += RandDivisor Constant
-scoreboard players operation rand5 randgen %= RandDivisor Constant
-
-scoreboard players add timer randgen 1
-execute unless score timer randgen matches 0..19 run scoreboard players set timer randgen 0
-execute if score timer randgen matches 0 as @r store result score temp randgen run data get entity @s UUIDLeast 0.00000000023283064365386962890625
-execute if score timer randgen matches 0 run scoreboard players operation seed1 randgen += temp randgen
-execute if score timer randgen matches 0 as @r store result score temp randgen run data get entity @s UUIDLeast 0.00000000023283064365386962890625
-execute if score timer randgen matches 0 run scoreboard players operation seed2 randgen += temp randgen
-execute if score timer randgen matches 0 as @r store result score temp randgen run data get entity @s UUIDLeast 0.00000000023283064365386962890625
-execute if score timer randgen matches 0 run scoreboard players operation seed3 randgen += temp randgen
-execute if score timer randgen matches 0 as @r store result score temp randgen run data get entity @s UUIDLeast 0.00000000023283064365386962890625
-execute if score timer randgen matches 0 run scoreboard players operation seed4 randgen += temp randgen
-execute if score timer randgen matches 0 as @r store result score temp randgen run data get entity @s UUIDLeast 0.00000000023283064365386962890625
-execute if score timer randgen matches 0 run scoreboard players operation seed5 randgen += temp randgen
+#Reseed every 10 seconds / 200 calls
+scoreboard players add seedTimer rndgenTimer 1
+execute unless score seedTimer rndgenTimer matches 0..199 run scoreboard players set seedTimer rndgenTimer 0
+execute if score seedTimer rndgenTimer matches 0 as @r store result score temp rndgenTimer run data get entity @s UUIDLeast 0.00000000023283064365386962890625
+execute if score seedTimer rndgenTimer matches 0 run scoreboard players operation seed1A rndgenTimer += temp rndgenTimer
+execute if score seedTimer rndgenTimer matches 0 as @r store result score temp rndgenTimer run data get entity @s UUIDLeast 0.00000000023283064365386962890625
+execute if score seedTimer rndgenTimer matches 0 run scoreboard players operation seed1B rndgenTimer += temp rndgenTimer
+execute if score seedTimer rndgenTimer matches 0 as @r store result score temp rndgenTimer run data get entity @s UUIDLeast 0.00000000023283064365386962890625
+execute if score seedTimer rndgenTimer matches 0 run scoreboard players operation seed2A rndgenTimer += temp rndgenTimer
+execute if score seedTimer rndgenTimer matches 0 as @r store result score temp rndgenTimer run data get entity @s UUIDLeast 0.00000000023283064365386962890625
+execute if score seedTimer rndgenTimer matches 0 run scoreboard players operation seed2B rndgenTimer += temp rndgenTimer
+execute if score seedTimer rndgenTimer matches 0 as @r store result score temp rndgenTimer run data get entity @s UUIDLeast 0.00000000023283064365386962890625
+execute if score seedTimer rndgenTimer matches 0 run scoreboard players operation seed3A rndgenTimer += temp rndgenTimer
+execute if score seedTimer rndgenTimer matches 0 as @r store result score temp rndgenTimer run data get entity @s UUIDLeast 0.00000000023283064365386962890625
+execute if score seedTimer rndgenTimer matches 0 run scoreboard players operation seed3B rndgenTimer += temp rndgenTimer

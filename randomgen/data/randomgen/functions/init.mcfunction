@@ -1,7 +1,7 @@
 scoreboard objectives add rndgenVariable dummy
 scoreboard objectives add rndgenTimer dummy
 scoreboard objectives add rndgenConstant dummy
-
+scoreboard objectives add rndgenOutput dummy
 
 scoreboard players set RandDivisor rndgenConstant 65536
 scoreboard players set SeedMultiplierA rndgenConstant 747796405
@@ -43,4 +43,4 @@ scoreboard players set seed3B rndgenVariable 0
 scoreboard players set rand3B rndgenVariable 0
 execute as @r store result score seed3B rndgenVariable run data get entity @s UUIDLeast 0.00000000023283064365386962890625
 
-scoreboard players set random rndgenVariable 0
+scoreboard players set random rndgenOutput 0

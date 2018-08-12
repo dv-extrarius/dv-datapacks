@@ -1,8 +1,8 @@
 line = r'''execute if score waveGlowTimer glowTimer matches %s run tag @e[type=!player,type=!dolphin,distance=%s,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing'''
-bandDistance = 6
+bandDistance = 4
 bandDuration = 0
 minDistance = 16
-maxDistance = 52
+maxDistance = 64
 timeMod = (3 * bandDistance)
 distMod = maxDistance - minDistance
 def dotdotspan(start, end):
@@ -10,7 +10,9 @@ def dotdotspan(start, end):
         return "%s..%s" % (start, end)
     return str(start)
 
-print("#NOTE: The conditions for waveGlowTimer wrapping in 'dotick' must be made to match the maximum count in this file")
+maxDistance += (minDistance - maxDistance) % timeMod
+
+print("#NOTE: The conditions for waveGlowTimer wrapping in 'dotick' must be made to match the maximum count in this file (%r)" % (timeMod - 1,))
 print(r'''tag @e[type=!player,type=!dolphin,distance=..%s,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing''' % (minDistance-1,))
 for ii, dd in enumerate(range(minDistance, maxDistance)):
     startTime = ii % timeMod

@@ -4,7 +4,16 @@ scoreboard objectives add rndgenConstant dummy
 scoreboard objectives add rndgenOutput dummy
 scoreboard objectives add rndgenInput dummy
 
-scoreboard players set RandDivisor rndgenConstant 65536
+scoreboard players set ConstNegOne rndgenConstant -1
+
+
+scoreboard players set RandModulus rndgenConstant -2147483648
+scoreboard players set RandLowDivisor rndgenConstant 131072
+scoreboard players set RandLowModulus rndgenConstant 32768
+scoreboard players set RandHiDivisor rndgenConstant 65536
+scoreboard players set RandHiModulus rndgenConstant 65536
+
+
 scoreboard players set SeedMultiplierA rndgenConstant 747796405
 scoreboard players set SeedMultiplierB rndgenConstant 277803737
 scoreboard players set SeedMultiplierC rndgenConstant 1103515245
@@ -17,8 +26,7 @@ scoreboard players set StreamAddend3B rndgenConstant 994191817
 
 scoreboard players set temp rndgenVariable 0
 scoreboard players set seedTimer rndgenTimer 0
-scoreboard players set timer2 rndgenTimer 0
-scoreboard players set timer3 rndgenTimer 0
+scoreboard players set stepTimer rndgenTimer 0
 
 scoreboard players set seed1A rndgenVariable 0
 scoreboard players set rand1A rndgenVariable 0
@@ -44,5 +52,9 @@ scoreboard players set seed3B rndgenVariable 0
 scoreboard players set rand3B rndgenVariable 0
 execute as @r store result score seed3B rndgenVariable run data get entity @s UUIDLeast 1
 
-scoreboard players set random_limit rndgenInput 1
+scoreboard players set random_limit rndgenInput 100
 scoreboard players set random rndgenOutput 0
+
+function randomgen:details/reseed1
+function randomgen:details/reseed2
+function randomgen:details/reseed3

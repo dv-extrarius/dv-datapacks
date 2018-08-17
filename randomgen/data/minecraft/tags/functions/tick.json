@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "randomgen:update"
+    "randomgen:details/stepgen"
   ]
 }

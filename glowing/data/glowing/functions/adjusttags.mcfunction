@@ -1,54 +1,53 @@
-#NOTE: The conditions for waveGlowTimer wrapping in 'dotick' must be made to match the maximum count in this file (11)
-tag @e[type=!player,type=!dolphin,distance=..15,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 0 run tag @e[type=!player,type=!dolphin,distance=16..20,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 1 run tag @e[type=!player,type=!dolphin,distance=17..21,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 2 run tag @e[type=!player,type=!dolphin,distance=18..22,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 3 run tag @e[type=!player,type=!dolphin,distance=19..23,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 4 run tag @e[type=!player,type=!dolphin,distance=20..24,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 5 run tag @e[type=!player,type=!dolphin,distance=21..25,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 6 run tag @e[type=!player,type=!dolphin,distance=22..26,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 7 run tag @e[type=!player,type=!dolphin,distance=23..27,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 8 run tag @e[type=!player,type=!dolphin,distance=24..28,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 9 run tag @e[type=!player,type=!dolphin,distance=25..29,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 10 run tag @e[type=!player,type=!dolphin,distance=26..30,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 11 run tag @e[type=!player,type=!dolphin,distance=27..31,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 0 run tag @e[type=!player,type=!dolphin,distance=28..32,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 1 run tag @e[type=!player,type=!dolphin,distance=29..33,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 2 run tag @e[type=!player,type=!dolphin,distance=30..34,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 3 run tag @e[type=!player,type=!dolphin,distance=31..35,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 4 run tag @e[type=!player,type=!dolphin,distance=32..36,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 5 run tag @e[type=!player,type=!dolphin,distance=33..37,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 6 run tag @e[type=!player,type=!dolphin,distance=34..38,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 7 run tag @e[type=!player,type=!dolphin,distance=35..39,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 8 run tag @e[type=!player,type=!dolphin,distance=36..40,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 9 run tag @e[type=!player,type=!dolphin,distance=37..41,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 10 run tag @e[type=!player,type=!dolphin,distance=38..42,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 11 run tag @e[type=!player,type=!dolphin,distance=39..43,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 0 run tag @e[type=!player,type=!dolphin,distance=40..44,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 1 run tag @e[type=!player,type=!dolphin,distance=41..45,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 2 run tag @e[type=!player,type=!dolphin,distance=42..46,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 3 run tag @e[type=!player,type=!dolphin,distance=43..47,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 4 run tag @e[type=!player,type=!dolphin,distance=44..48,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 5 run tag @e[type=!player,type=!dolphin,distance=45..49,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 6 run tag @e[type=!player,type=!dolphin,distance=46..50,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 7 run tag @e[type=!player,type=!dolphin,distance=47..51,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 8 run tag @e[type=!player,type=!dolphin,distance=48..52,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 9 run tag @e[type=!player,type=!dolphin,distance=49..53,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 10 run tag @e[type=!player,type=!dolphin,distance=50..54,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 11 run tag @e[type=!player,type=!dolphin,distance=51..55,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 0 run tag @e[type=!player,type=!dolphin,distance=52..56,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 1 run tag @e[type=!player,type=!dolphin,distance=53..57,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 2 run tag @e[type=!player,type=!dolphin,distance=54..58,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 3 run tag @e[type=!player,type=!dolphin,distance=55..59,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 4 run tag @e[type=!player,type=!dolphin,distance=56..60,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 5 run tag @e[type=!player,type=!dolphin,distance=57..61,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 6 run tag @e[type=!player,type=!dolphin,distance=58..62,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 7 run tag @e[type=!player,type=!dolphin,distance=59..63,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 8 run tag @e[type=!player,type=!dolphin,distance=60..63,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 8 run tag @e[type=!player,type=!dolphin,distance=16,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 9 run tag @e[type=!player,type=!dolphin,distance=61..63,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 9 run tag @e[type=!player,type=!dolphin,distance=16..17,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 10 run tag @e[type=!player,type=!dolphin,distance=62..63,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 10 run tag @e[type=!player,type=!dolphin,distance=16..18,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 11 run tag @e[type=!player,type=!dolphin,distance=63,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
-execute if score waveGlowTimer glowTimer matches 11 run tag @e[type=!player,type=!dolphin,distance=16..19,nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] add madeGlowing
+execute if entity @a[distance=..15] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 0 if entity @a[distance=16..20] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 1 if entity @a[distance=17..21] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 2 if entity @a[distance=18..22] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 3 if entity @a[distance=19..23] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 4 if entity @a[distance=20..24] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 5 if entity @a[distance=21..25] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 6 if entity @a[distance=22..26] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 7 if entity @a[distance=23..27] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 8 if entity @a[distance=24..28] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 9 if entity @a[distance=25..29] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 10 if entity @a[distance=26..30] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 11 if entity @a[distance=27..31] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 0 if entity @a[distance=28..32] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 1 if entity @a[distance=29..33] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 2 if entity @a[distance=30..34] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 3 if entity @a[distance=31..35] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 4 if entity @a[distance=32..36] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 5 if entity @a[distance=33..37] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 6 if entity @a[distance=34..38] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 7 if entity @a[distance=35..39] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 8 if entity @a[distance=36..40] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 9 if entity @a[distance=37..41] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 10 if entity @a[distance=38..42] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 11 if entity @a[distance=39..43] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 0 if entity @a[distance=40..44] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 1 if entity @a[distance=41..45] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 2 if entity @a[distance=42..46] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 3 if entity @a[distance=43..47] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 4 if entity @a[distance=44..48] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 5 if entity @a[distance=45..49] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 6 if entity @a[distance=46..50] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 7 if entity @a[distance=47..51] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 8 if entity @a[distance=48..52] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 9 if entity @a[distance=49..53] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 10 if entity @a[distance=50..54] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 11 if entity @a[distance=51..55] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 0 if entity @a[distance=52..56] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 1 if entity @a[distance=53..57] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 2 if entity @a[distance=54..58] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 3 if entity @a[distance=55..59] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 4 if entity @a[distance=56..60] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 5 if entity @a[distance=57..61] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 6 if entity @a[distance=58..62] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 7 if entity @a[distance=59..63] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 8 if entity @a[distance=60..63] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 8 if entity @a[distance=16] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 9 if entity @a[distance=61..63] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 9 if entity @a[distance=16..17] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 10 if entity @a[distance=62..63] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 10 if entity @a[distance=16..18] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 11 if entity @a[distance=63] run tag @s add madeGlowing
+execute if score waveGlowTimer glowTimer matches 11 if entity @a[distance=16..19] run tag @s add madeGlowing

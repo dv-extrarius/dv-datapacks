@@ -20,7 +20,9 @@ scoreboard players operation random rndgenOutput += rand1B rndgenVariable
 scoreboard players operation random rndgenOutput += rand2B rndgenVariable
 scoreboard players operation random rndgenOutput += rand3B rndgenVariable
 
-#Reseed every 10 seconds / 200 calls
+#Reseed every 60 seconds / 1200 calls
 scoreboard players add seedTimer rndgenTimer 1
-execute unless score seedTimer rndgenTimer matches 0..199 run scoreboard players set seedTimer rndgenTimer 0
-execute if score seedTimer rndgenTimer matches 0 run function randomgen:details/reseed
+execute unless score seedTimer rndgenTimer matches 0..1199 run scoreboard players set seedTimer rndgenTimer 0
+execute if score seedTimer rndgenTimer matches 0 run function randomgen:details/reseed1
+execute if score seedTimer rndgenTimer matches 400 run function randomgen:details/reseed2
+execute if score seedTimer rndgenTimer matches 800 run function randomgen:details/reseed3

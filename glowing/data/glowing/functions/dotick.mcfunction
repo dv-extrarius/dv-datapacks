@@ -7,7 +7,7 @@ execute if score glowingTimer glowTimer matches 0 unless score waveGlowTimer glo
 tag @e[tag=madeGlowing] add stopGlowing
 tag @e[tag=stopGlowing,tag=madeGlowing] remove madeGlowing
 execute as @e[tag=stopGlowing] run data merge entity @s {Glowing: 0b}
-execute as @a at @s run function glowing:adjusttags
+execute as @e[type=!player,type=!dolphin] run execute as @s[nbt={Attributes:[{Name:"generic.attackDamage"}]},nbt=!{Glowing: 1b}] at @s run function glowing:adjusttags
 tag @e[tag=madeGlowing] remove stopGlowing
 
 execute as @e[tag=madeGlowing] run data merge entity @s {Glowing: 1b}

@@ -2,6 +2,7 @@ scoreboard objectives add rndgenVariable dummy
 scoreboard objectives add rndgenTimer dummy
 scoreboard objectives add rndgenConstant dummy
 scoreboard objectives add rndgenOutput dummy
+scoreboard objectives add rndgenInput dummy
 
 scoreboard players set RandDivisor rndgenConstant 65536
 scoreboard players set SeedMultiplierA rndgenConstant 747796405
@@ -21,26 +22,27 @@ scoreboard players set timer3 rndgenTimer 0
 
 scoreboard players set seed1A rndgenVariable 0
 scoreboard players set rand1A rndgenVariable 0
-execute as @r store result score seed1A rndgenVariable run data get entity @s UUIDLeast 0.00000000023283064365386962890625
+execute as @r store result score seed1A rndgenVariable run data get entity @s UUIDLeast 1
 
 scoreboard players set seed1B rndgenVariable 0
 scoreboard players set rand1B rndgenVariable 0
-execute as @r store result score seed1B rndgenVariable run data get entity @s UUIDLeast 0.00000000023283064365386962890625
+execute as @r store result score seed1B rndgenVariable run data get entity @s UUIDLeast 1
 
 scoreboard players set seed2A rndgenVariable 0
 scoreboard players set rand2A rndgenVariable 0
-execute as @r store result score seed2A rndgenVariable run data get entity @s UUIDLeast 0.00000000023283064365386962890625
+execute as @r store result score seed2A rndgenVariable run data get entity @s UUIDLeast 1
 
 scoreboard players set seed2B rndgenVariable 0
 scoreboard players set rand2B rndgenVariable 0
-execute as @r store result score seed2B rndgenVariable run data get entity @s UUIDLeast 0.00000000023283064365386962890625
+execute as @r store result score seed2B rndgenVariable run data get entity @s UUIDLeast 1
 
 scoreboard players set seed3A rndgenVariable 0
 scoreboard players set rand3A rndgenVariable 0
-execute as @r store result score seed3A rndgenVariable run data get entity @s UUIDLeast 0.00000000023283064365386962890625
+execute as @r store result score seed3A rndgenVariable run data get entity @s UUIDLeast 1
 
 scoreboard players set seed3B rndgenVariable 0
 scoreboard players set rand3B rndgenVariable 0
-execute as @r store result score seed3B rndgenVariable run data get entity @s UUIDLeast 0.00000000023283064365386962890625
+execute as @r store result score seed3B rndgenVariable run data get entity @s UUIDLeast 1
 
+scoreboard players set random_limit rndgenInput 1
 scoreboard players set random rndgenOutput 0

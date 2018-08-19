@@ -17,10 +17,10 @@ Water Breathing | /trigger smWaterBreathing
 Kill Drowned | /trigger smKillDrowned
 
 # RandomGen
-A long-for-minecraft period random number generator. The period should be about 2^34, but the generator reseeds every 60 seconds or every 1200 manual updates.
+A long-for-minecraft period random number generator. The period is 2^64, but the generator also reseeds every 60 seconds or every 1200 manual updates.
 To use, set the score variable "random_limit rndgenInput" to one more than the maximum you want to generate, then call the function "randgen:generate". The output will be stored in the score variable "random rndgenOutput". If you need more than one number, simply save off the first one and repeat the aforementioned process.
 
-Details: This generator is a combination of 6 32-bit linear congruential generators, used in pairs. Only the top 16 bits of each generator are used. The second pair of generators is only updated every other tick, and the third pair of generators is only updated every 4th tick. The first generator in each pair contributes its 16 bit output to the high bits of the output, and the second generator in each pair contributes its 16 bit output to the low bits of the output.
+Details: This generator is a 64-bit linear congruential generator. The top 31 bits of the generator are used for output. The 64-bit seed is stored across 5 variables (each holding <=13 bits) and basic multi-precision math is used to perform the 64-bit multiplication and addition required for each generated value.
 
 # WandCraft
 A kind of sandbox where I'm playing with different kinds of right-click commands to create different wand-like effects. It started when I saw the datapack "buildwand".

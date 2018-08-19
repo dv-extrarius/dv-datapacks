@@ -1,31 +1,73 @@
-#Update Timer
-scoreboard players add stepTimer rndgenTimer 1
-execute unless score stepTimer rndgenTimer matches 0..3 run scoreboard players set stepTimer rndgenTimer 0
+#Multiply & Add Increment
+scoreboard players operation d0 rndgenTemp = a0 rndgenSeed
+scoreboard players operation d0 rndgenTemp *= c0 rndgenConst
+scoreboard players add d0 rndgenTemp 335
 
-#First Generator Pair
-function randomgen:details/update1
+scoreboard players operation d1 rndgenTemp = a0 rndgenSeed
+scoreboard players operation d1 rndgenTemp *= c1 rndgenConst
+scoreboard players operation t rndgenTemp = a1 rndgenSeed
+scoreboard players operation t rndgenTemp *= c0 rndgenConst
+scoreboard players operation d1 rndgenTemp += t rndgenTemp
+scoreboard players add d1 rndgenTemp 6972
 
-#Second Generator Pair
-execute if score stepTimer rndgenTimer matches 0 run function randomgen:details/update2
-execute if score stepTimer rndgenTimer matches 2 run function randomgen:details/update2
+scoreboard players operation d2 rndgenTemp = a0 rndgenSeed
+scoreboard players operation d2 rndgenTemp *= c2 rndgenConst
+scoreboard players operation t rndgenTemp = a1 rndgenSeed
+scoreboard players operation t rndgenTemp *= c1 rndgenConst
+scoreboard players operation d2 rndgenTemp += t rndgenTemp
+scoreboard players operation t rndgenTemp = a2 rndgenSeed
+scoreboard players operation t rndgenTemp *= c0 rndgenConst
+scoreboard players operation d2 rndgenTemp += t rndgenTemp
+scoreboard players add d2 rndgenTemp 8125
 
-#Third Generator Pair
-execute if score stepTimer rndgenTimer matches 0 run function randomgen:details/update3
+scoreboard players operation d3 rndgenTemp = a0 rndgenSeed
+scoreboard players operation d3 rndgenTemp *= c3 rndgenConst
+scoreboard players operation t rndgenTemp = a1 rndgenSeed
+scoreboard players operation t rndgenTemp *= c2 rndgenConst
+scoreboard players operation d3 rndgenTemp += t rndgenTemp
+scoreboard players operation t rndgenTemp = a2 rndgenSeed
+scoreboard players operation t rndgenTemp *= c1 rndgenConst
+scoreboard players operation d3 rndgenTemp += t rndgenTemp
+scoreboard players operation t rndgenTemp = a3 rndgenSeed
+scoreboard players operation t rndgenTemp *= c0 rndgenConst
+scoreboard players operation d3 rndgenTemp += t rndgenTemp
+scoreboard players add d3 rndgenTemp 2806
 
-#Combine Generators
-scoreboard players operation random rndgenVariable = rand1A rndgenVariable
-scoreboard players operation random rndgenVariable += rand2A rndgenVariable
-scoreboard players operation random rndgenVariable += rand3A rndgenVariable
-scoreboard players operation random rndgenVariable *= RandLowModulus rndgenConstant
-scoreboard players operation random rndgenVariable += rand1B rndgenVariable
-scoreboard players operation random rndgenVariable += rand2B rndgenVariable
-scoreboard players operation random rndgenVariable += rand3B rndgenVariable
+scoreboard players operation d4 rndgenTemp = a0 rndgenSeed
+scoreboard players operation d4 rndgenTemp *= c4 rndgenConst
+scoreboard players operation t rndgenTemp = a1 rndgenSeed
+scoreboard players operation t rndgenTemp *= c3 rndgenConst
+scoreboard players operation d4 rndgenTemp += t rndgenTemp
+scoreboard players operation t rndgenTemp = a2 rndgenSeed
+scoreboard players operation t rndgenTemp *= c2 rndgenConst
+scoreboard players operation d4 rndgenTemp += t rndgenTemp
+scoreboard players operation t rndgenTemp = a3 rndgenSeed
+scoreboard players operation t rndgenTemp *= c1 rndgenConst
+scoreboard players operation d4 rndgenTemp += t rndgenTemp
+scoreboard players operation t rndgenTemp = a4 rndgenSeed
+scoreboard players operation t rndgenTemp *= c0 rndgenConst
+scoreboard players operation d4 rndgenTemp += t rndgenTemp
+scoreboard players add d4 rndgenTemp 640
 
-execute if score random rndgenVariable <= ConstNegOne rndgenConstant run scoreboard players operation random rndgenVariable *= ConstNegOne rndgenConstant
+#Store Seed Back
+scoreboard players operation a0 rndgenSeed = d0 rndgenTemp
+scoreboard players operation a1 rndgenSeed = d1 rndgenTemp
+scoreboard players operation a2 rndgenSeed = d2 rndgenTemp
+scoreboard players operation a3 rndgenSeed = d3 rndgenTemp
+scoreboard players operation a4 rndgenSeed = d4 rndgenTemp
+
+function randomgen:details/normalize
+
+#Extract Number
+scoreboard players operation random rndgenTemp = a4 rndgenSeed
+scoreboard players operation random rndgenTemp *= 8192 rndgenConst
+scoreboard players operation random rndgenTemp += a3 rndgenSeed
+scoreboard players operation random rndgenTemp *= 64 rndgenConst
+scoreboard players operation t rndgenTemp = a2 rndgenSeed
+scoreboard players operation t rndgenTemp /= 128 rndgenConst
+scoreboard players operation random rndgenTemp += t rndgenTemp
 
 #Reseed every 60 seconds / 1200 calls
 scoreboard players add seedTimer rndgenTimer 1
 execute unless score seedTimer rndgenTimer matches 0..1199 run scoreboard players set seedTimer rndgenTimer 0
-execute if score seedTimer rndgenTimer matches 0 run function randomgen:details/reseed1
-execute if score seedTimer rndgenTimer matches 400 run function randomgen:details/reseed2
-execute if score seedTimer rndgenTimer matches 800 run function randomgen:details/reseed3
+execute if score seedTimer rndgenTimer matches 0 run function randomgen:details/reseed

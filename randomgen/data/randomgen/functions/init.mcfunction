@@ -1,60 +1,31 @@
-scoreboard objectives add rndgenVariable dummy
 scoreboard objectives add rndgenTimer dummy
-scoreboard objectives add rndgenConstant dummy
-scoreboard objectives add rndgenOutput dummy
 scoreboard objectives add rndgenInput dummy
+scoreboard objectives add rndgenTemp dummy
+scoreboard objectives add rndgenOutput dummy
+scoreboard objectives add rndgenSeed dummy
+scoreboard objectives add rndgenConst dummy
 
-scoreboard players set ConstNegOne rndgenConstant -1
+scoreboard players set c0 rndgenConst 7981
+scoreboard players set c1 rndgenConst 1195
+scoreboard players set c2 rndgenConst 2899
+scoreboard players set c3 rndgenConst 1000
+scoreboard players set c4 rndgenConst 2826
+scoreboard players set 277803737 rndgenConst 277803737
+scoreboard players set 8192 rndgenConst 8192
+scoreboard players set 4096 rndgenConst 4096
+scoreboard players set 128 rndgenConst 128
+scoreboard players set 64 rndgenConst 64
 
-
-scoreboard players set RandModulus rndgenConstant -2147483648
-scoreboard players set RandLowDivisor rndgenConstant 131072
-scoreboard players set RandLowModulus rndgenConstant 32768
-scoreboard players set RandHiDivisor rndgenConstant 65536
-scoreboard players set RandHiModulus rndgenConstant 65536
-
-
-scoreboard players set SeedMultiplierA rndgenConstant 747796405
-scoreboard players set SeedMultiplierB rndgenConstant 277803737
-scoreboard players set SeedMultiplierC rndgenConstant 1103515245
-scoreboard players set StreamAddend1A rndgenConstant 949870287
-scoreboard players set StreamAddend1B rndgenConstant 485826193
-scoreboard players set StreamAddend2A rndgenConstant 130973863
-scoreboard players set StreamAddend2B rndgenConstant 834267193
-scoreboard players set StreamAddend3A rndgenConstant 459976955
-scoreboard players set StreamAddend3B rndgenConstant 994191817
-
-scoreboard players set temp rndgenVariable 0
-scoreboard players set seedTimer rndgenTimer 0
-scoreboard players set stepTimer rndgenTimer 0
-
-scoreboard players set seed1A rndgenVariable 0
-scoreboard players set rand1A rndgenVariable 0
-execute as @r store result score seed1A rndgenVariable run data get entity @s UUIDLeast 1
-
-scoreboard players set seed1B rndgenVariable 0
-scoreboard players set rand1B rndgenVariable 0
-execute as @r store result score seed1B rndgenVariable run data get entity @s UUIDLeast 1
-
-scoreboard players set seed2A rndgenVariable 0
-scoreboard players set rand2A rndgenVariable 0
-execute as @r store result score seed2A rndgenVariable run data get entity @s UUIDLeast 1
-
-scoreboard players set seed2B rndgenVariable 0
-scoreboard players set rand2B rndgenVariable 0
-execute as @r store result score seed2B rndgenVariable run data get entity @s UUIDLeast 1
-
-scoreboard players set seed3A rndgenVariable 0
-scoreboard players set rand3A rndgenVariable 0
-execute as @r store result score seed3A rndgenVariable run data get entity @s UUIDLeast 1
-
-scoreboard players set seed3B rndgenVariable 0
-scoreboard players set rand3B rndgenVariable 0
-execute as @r store result score seed3B rndgenVariable run data get entity @s UUIDLeast 1
+scoreboard players set a0 rndgenSeed 0
+execute as @r store result score a0 rndgenSeed run data get entity @s UUIDLeast 1
+execute as @r store result score a1 rndgenSeed run data get entity @s UUIDLeast 1
+execute as @r store result score a2 rndgenSeed run data get entity @s UUIDLeast 1
+execute as @r store result score a3 rndgenSeed run data get entity @s UUIDLeast 1
+execute as @r store result score a4 rndgenSeed run data get entity @s UUIDLeast 1
+function andomgen:details/normalize
 
 scoreboard players set random_limit rndgenInput 100
 scoreboard players set random rndgenOutput 0
 
-function randomgen:details/reseed1
-function randomgen:details/reseed2
-function randomgen:details/reseed3
+function randomgen:details/reseed
+

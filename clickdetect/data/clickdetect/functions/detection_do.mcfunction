@@ -4,26 +4,35 @@ execute if entity @s[tag=!cd_DetectActive] run summon villager ^-0.5 ^ ^0.5 {Tag
 #ActiveEffects:[{Id:14,Amplifier:0,Duration:2000000,ShowParticles:0b},{Id:11,Amplifier:3,Duration:2000000,ShowParticles:0b},{Id:6,Amplifier:127,Duration:2000000,ShowParticles:0b}]
 tag @s add cd_DetectActive
 
+##############################################################################################
+data merge entity @e[tag=cd_ClickVillagerA,type=villager,sort=nearest,limit=1] {Health:1000000.0f,ActiveEffects:[{Id:14,Amplifier:0,Duration:2000000,ShowParticles:0b},{Id:11,Amplifier:3,Duration:2000000,ShowParticles:0b},{Id:6,Amplifier:127,Duration:2000000,ShowParticles:0b}]}
+data merge entity @e[tag=cd_ClickVillagerB,type=villager,sort=nearest,limit=1] {Health:1000000.0f,ActiveEffects:[{Id:14,Amplifier:0,Duration:2000000,ShowParticles:0b},{Id:11,Amplifier:3,Duration:2000000,ShowParticles:0b},{Id:6,Amplifier:127,Duration:2000000,ShowParticles:0b}]}
+data merge entity @e[tag=cd_ClickVillagerC,type=villager,sort=nearest,limit=1] {Health:1000000.0f,ActiveEffects:[{Id:14,Amplifier:0,Duration:2000000,ShowParticles:0b},{Id:11,Amplifier:3,Duration:2000000,ShowParticles:0b},{Id:6,Amplifier:127,Duration:2000000,ShowParticles:0b}]}
+##############################################################################################
+
+execute store result entity @e[tag=cd_ClickVillagerA,type=villager,sort=nearest,limit=1] Rotation[0] float 0.001 run data get entity @s Rotation[0] 1000
+execute store result entity @e[tag=cd_ClickVillagerA,type=villager,sort=nearest,limit=1] Rotation[1] float 0.001 run data get entity @s Rotation[1] 1000
+execute store result entity @e[tag=cd_ClickVillagerB,type=villager,sort=nearest,limit=1] Rotation[0] float 0.001 run data get entity @s Rotation[0] 1000
+execute store result entity @e[tag=cd_ClickVillagerB,type=villager,sort=nearest,limit=1] Rotation[1] float 0.001 run data get entity @s Rotation[1] 1000
+execute store result entity @e[tag=cd_ClickVillagerC,type=villager,sort=nearest,limit=1] Rotation[0] float 0.001 run data get entity @s Rotation[0] 1000
+execute store result entity @e[tag=cd_ClickVillagerC,type=villager,sort=nearest,limit=1] Rotation[1] float 0.001 run data get entity @s Rotation[1] 1000
+##############################################################################################
 scoreboard players operation NewX cd_Temp = @s cd_MoveX
 scoreboard players operation NewX cd_Temp += @s cd_PrevMoveX
-#scoreboard players operation NewX cd_Temp /= Const2 cd_Constant
 scoreboard players operation NewX cd_Temp += @s cd_PosX
 scoreboard players operation NewX cd_Temp += @s cd_FrontX
 
 scoreboard players operation NewY cd_Temp = @s cd_MoveY
 scoreboard players operation NewY cd_Temp += @s cd_PrevMoveY
-#scoreboard players operation NewY cd_Temp /= Const2 cd_Constant
 scoreboard players operation NewY cd_Temp += @s cd_PosY
 scoreboard players operation NewY cd_Temp += @s cd_FrontY
-scoreboard players add NewY cd_Temp 750
+scoreboard players add NewY cd_Temp 500
 
 scoreboard players operation NewZ cd_Temp = @s cd_MoveZ
 scoreboard players operation NewZ cd_Temp += @s cd_PrevMoveZ
-#scoreboard players operation NewZ cd_Temp /= Const2 cd_Constant
 scoreboard players operation NewZ cd_Temp += @s cd_PosZ
 scoreboard players operation NewZ cd_Temp += @s cd_FrontZ
 
-tp @e[tag=cd_ClickVillager,type=villager,sort=nearest,limit=1] @s
 execute store result entity @e[tag=cd_ClickVillagerA,type=villager,sort=nearest,limit=1] Pos[0] double 0.001 run scoreboard players get NewX cd_Temp
 execute store result entity @e[tag=cd_ClickVillagerA,type=villager,sort=nearest,limit=1] Pos[1] double 0.001 run scoreboard players get NewY cd_Temp
 execute store result entity @e[tag=cd_ClickVillagerA,type=villager,sort=nearest,limit=1] Pos[2] double 0.001 run scoreboard players get NewZ cd_Temp
@@ -47,8 +56,6 @@ scoreboard players operation TempZ cd_Temp += @s cd_LeftZ
 scoreboard players operation TempZ cd_Temp /= Const2 cd_Constant
 scoreboard players operation NewZ cd_Temp += TempZ cd_Temp
 
-tp @e[tag=cd_ClickVillagerB,type=villager,sort=nearest,limit=1] @s
-
 execute store result entity @e[tag=cd_ClickVillagerB,type=villager,sort=nearest,limit=1] Pos[0] double 0.001 run scoreboard players get NewX cd_Temp
 execute store result entity @e[tag=cd_ClickVillagerB,type=villager,sort=nearest,limit=1] Pos[1] double 0.001 run scoreboard players get NewY cd_Temp
 execute store result entity @e[tag=cd_ClickVillagerB,type=villager,sort=nearest,limit=1] Pos[2] double 0.001 run scoreboard players get NewZ cd_Temp
@@ -71,8 +78,6 @@ scoreboard players operation TempZ cd_Temp = @s cd_FrontZ
 scoreboard players operation TempZ cd_Temp -= @s cd_LeftZ
 scoreboard players operation TempZ cd_Temp /= Const2 cd_Constant
 scoreboard players operation NewZ cd_Temp += TempZ cd_Temp
-
-tp @e[tag=cd_ClickVillagerC,type=villager,sort=nearest,limit=1] @s
 
 execute store result entity @e[tag=cd_ClickVillagerC,type=villager,sort=nearest,limit=1] Pos[0] double 0.001 run scoreboard players get NewX cd_Temp
 execute store result entity @e[tag=cd_ClickVillagerC,type=villager,sort=nearest,limit=1] Pos[1] double 0.001 run scoreboard players get NewY cd_Temp

@@ -1,6 +1,9 @@
 # dv-datapacks
 DataPacks for Minecraft
 
+# ClickDetect
+This datapack implements advanced click detection. It is based on the click detection in https://github.com/ImCoolYeah105/Datapack-Utilities , but uses 3 villagers at a time, and positions them based on your movement and relative to you (one in front, one to the front/left, and one to the front/right), which helps catch clicks when strafing, moving backward and turning, and other situations that the original implementation would be more likely to miss. Even with 3 villagers, it isn't perfect and still occasionally misses clicks, but much less often than other implementations. To use, add "cd_Detect: 1b" to an item's data, and when it is the selected item, the player will get tagged with "cd_RightClick" or "cd_LeftClick" as appropriate (for a single tick only, though holding right click repeats right clicks until the button is released).
+
 # Glowing
 This datapack helps you know where mobs are by giving them an outline visible through walls. It makes mobs with a certain distance (16 blocks by default) always have the outline, and then from that distance out to a maximum (64 by default) outlines the mobs in a kind of expanding ring, like on early monochrome CRT sonar displays. Noting when different mobs are outlined in the expanding "ping" can help you know how far away they are.
 

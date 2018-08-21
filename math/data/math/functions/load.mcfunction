@@ -3,4 +3,16 @@ scoreboard objectives add extrepOutput dummy
 scoreboard objectives add extrepInput dummy
 scoreboard objectives add extrepConst dummy
 
-scoreboard players set 2 extrepConst 2
+scoreboard players set #2 extrepConst 2
+scoreboard players set #3600000 extrepConst 3600000
+scoreboard players set #1800000 extrepConst 1800000
+scoreboard players set #900000 extrepConst 900000
+scoreboard players set #90 extrepConst 90
+scoreboard players set #5000 extrepConst 5000
+scoreboard players set #-5741 extrepConst -5741
+scoreboard players set #6930 extrepConst 6930
+scoreboard players set #10000 extrepConst 10000
+scoreboard players set #7071 extrepConst 7071
+
+
+scoreboard objectives setdisplay sidebar extrepOutput

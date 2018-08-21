@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "sandbox:load"
+    "math:load",
+    "randomgen:load"
   ]
 }

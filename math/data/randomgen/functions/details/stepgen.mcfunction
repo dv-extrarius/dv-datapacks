@@ -60,11 +60,11 @@ function randomgen:details/normalize
 
 #Extract Number
 scoreboard players operation random rndgenTemp = a4 rndgenSeed
-scoreboard players operation random rndgenTemp *= 8192 rndgenConst
+scoreboard players operation random rndgenTemp *= #8192 rndgenConst
 scoreboard players operation random rndgenTemp += a3 rndgenSeed
-scoreboard players operation random rndgenTemp *= 64 rndgenConst
+scoreboard players operation random rndgenTemp *= #64 rndgenConst
 scoreboard players operation t rndgenTemp = a2 rndgenSeed
-scoreboard players operation t rndgenTemp /= 128 rndgenConst
+scoreboard players operation t rndgenTemp /= #128 rndgenConst
 scoreboard players operation random rndgenTemp += t rndgenTemp
 
 #Reseed every 60 seconds / 1200 calls

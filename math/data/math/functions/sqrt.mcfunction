@@ -1,5 +1,5 @@
 scoreboard players operation b extrepTemp = Value extrepInput
-execute if score value input matches 0 scoreboard players set b extrepTemp 1
+execute if score value input matches 0 run scoreboard players set b extrepTemp 1
 
 #Estimate based on fixed series of values (which always produce a correct value or underestimate)
 scoreboard players set x extrepTemp 1
@@ -22,5 +22,5 @@ scoreboard players operation x extrepTemp = t extrepTemp
 #Refine the estimate. Exhaustive testing showed 6 iterations suffice for values 1..2147483647
 function math:details/newton_step
 
-execute if score value input matches 0 scoreboard players set x extrepTemp 0
-scoreboard players operation Value extrepOutput = x extrepTemp
+execute if score value input matches 0 run scoreboard players set x extrepTemp 0
+scoreboard players operation Sqrt extrepOutput = x extrepTemp

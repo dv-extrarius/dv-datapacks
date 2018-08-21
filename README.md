@@ -16,7 +16,10 @@ Invisibility | /trigger smInvisibility
 Water Breathing | /trigger smWaterBreathing
 Kill Drowned | /trigger smKillDrowned
 
-# RandomGen
+# Math
+This datapack provides a few mathematical functions. 'sqrt' works on all positive inputs (and 0) and takes the input in "Value extrepInput" and provides the output in "Sqrt extrepOutput". 'sine' computes the sine of an angle given in degrees * 10000 in the variable "Value extrepInput" and provides the output in "Sine extrepOutput". 'cosine' works similarly to sine, providing the output in "Cosine extrepOutput". 'veclength' calculates the length of a 3d vector, taking inputs in "VecX extrepInput", "VecY extrepInput", and "VecZ extrepInput" and returns the value in "Length extrepOutput" (implementation detail: it also clobbers "Sqrt extrepOutput")
+
+## RandomGen (subsumed into math, still in randomgen namespace)
 A long-for-minecraft period random number generator. The period is 2^64, but the generator also reseeds every 60 seconds or every 1200 manual updates.
 To use, set the score variable "random_limit rndgenInput" to one more than the maximum you want to generate, then call the function "randgen:generate". The output will be stored in the score variable "random rndgenOutput". If you need more than one number, simply save off the first one and repeat the aforementioned process.
 

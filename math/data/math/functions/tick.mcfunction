@@ -1,4 +1,3 @@
-execute store result score vecX vecInput run data get entity @p Pos[0]
-execute store result score vecY vecInput run data get entity @p Pos[1]
-execute store result score vecZ vecInput run data get entity @p Pos[2]
-function sandbox:veclen
+#execute store result score Value extrepInput run data get entity @p Rotation[0] 10000
+#function math:sine
+#function math:cosine

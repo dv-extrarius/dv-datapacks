@@ -10,11 +10,11 @@ scoreboard players set c1 rndgenConst 1195
 scoreboard players set c2 rndgenConst 2899
 scoreboard players set c3 rndgenConst 1000
 scoreboard players set c4 rndgenConst 2826
-scoreboard players set 277803737 rndgenConst 277803737
-scoreboard players set 8192 rndgenConst 8192
-scoreboard players set 4096 rndgenConst 4096
-scoreboard players set 128 rndgenConst 128
-scoreboard players set 64 rndgenConst 64
+scoreboard players set mcg32 rndgenConst 277803737
+scoreboard players set #8192 rndgenConst 8192
+scoreboard players set #4096 rndgenConst 4096
+scoreboard players set #128 rndgenConst 128
+scoreboard players set #64 rndgenConst 64
 
 scoreboard players set a0 rndgenSeed 0
 execute as @r store result score a0 rndgenSeed run data get entity @s UUIDLeast 1
@@ -28,4 +28,3 @@ scoreboard players set random_limit rndgenInput 100
 scoreboard players set random rndgenOutput 0
 
 function randomgen:details/reseed
-

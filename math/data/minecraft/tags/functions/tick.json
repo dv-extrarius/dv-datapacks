@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "sandbox:tick"
+    "math:tick",
+    "randomgen:details/stepgen"
   ]
 }

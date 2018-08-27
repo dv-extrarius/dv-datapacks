@@ -22,9 +22,7 @@ scoreboard players operation @s cd_MoveZ -= @s cd_PrevZ
 
 summon minecraft:area_effect_cloud ^ ^ ^1 {Tags:["cd_DirDetector"],ReapplicationDelay:20,Radius:0.0f,RadiusPerTick:0.0f,RadiusOnUse:0.0f,Duration:1,DurationOnUse:0,NoGravity:1b,Silent:1b,Invulnerable:1b,DeathLootTable:"empty",NoAI:1b}
 
-execute as @e[tag=cd_DirDetector,type=minecraft:area_effect_cloud,sort=nearest,limit=1] store result score TempX cd_Temp run data get entity @s Pos[0] 1000
-execute as @e[tag=cd_DirDetector,type=minecraft:area_effect_cloud,sort=nearest,limit=1] store result score TempY cd_Temp run data get entity @s Pos[1] 1000
-execute as @e[tag=cd_DirDetector,type=minecraft:area_effect_cloud,sort=nearest,limit=1] store result score TempZ cd_Temp run data get entity @s Pos[2] 1000
+execute as @e[tag=cd_DirDetector,type=minecraft:area_effect_cloud,sort=nearest,limit=1,distance=..8] run function clickdetect:get_pos
 
 scoreboard players operation @s cd_FrontX = TempX cd_Temp
 scoreboard players operation @s cd_FrontX -= @s cd_PosX
@@ -33,11 +31,9 @@ scoreboard players operation @s cd_FrontY -= @s cd_PosY
 scoreboard players operation @s cd_FrontZ = TempZ cd_Temp
 scoreboard players operation @s cd_FrontZ -= @s cd_PosZ
 
-tp @e[tag=cd_DirDetector,sort=nearest,limit=1] ^1 ^ ^
+tp @e[tag=cd_DirDetector,sort=nearest,limit=1,distance=..8] ^1 ^ ^
 
-execute as @e[tag=cd_DirDetector,type=minecraft:area_effect_cloud,sort=nearest,limit=1] store result score TempX cd_Temp run data get entity @s Pos[0] 1000
-execute as @e[tag=cd_DirDetector,type=minecraft:area_effect_cloud,sort=nearest,limit=1] store result score TempY cd_Temp run data get entity @s Pos[1] 1000
-execute as @e[tag=cd_DirDetector,type=minecraft:area_effect_cloud,sort=nearest,limit=1] store result score TempZ cd_Temp run data get entity @s Pos[2] 1000
+execute as @e[tag=cd_DirDetector,type=minecraft:area_effect_cloud,sort=nearest,limit=1,distance=..8] run function clickdetect:get_pos
 
 scoreboard players operation @s cd_LeftX = TempX cd_Temp
 scoreboard players operation @s cd_LeftX -= @s cd_PosX

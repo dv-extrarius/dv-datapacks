@@ -17,12 +17,12 @@ scoreboard players set #128 rndgenConst 128
 scoreboard players set #64 rndgenConst 64
 
 scoreboard players set a0 rndgenSeed 0
-execute as @r store result score a0 rndgenSeed run data get entity @s UUIDLeast 1
-execute as @r store result score a1 rndgenSeed run data get entity @s UUIDLeast 1
-execute as @r store result score a2 rndgenSeed run data get entity @s UUIDLeast 1
-execute as @r store result score a3 rndgenSeed run data get entity @s UUIDLeast 1
-execute as @r store result score a4 rndgenSeed run data get entity @s UUIDLeast 1
-function andomgen:details/normalize
+execute as @r store result score a0 rndgenSeed run data get entity @s UUIDMost 1
+execute as @r store result score a1 rndgenSeed run data get entity @s UUIDMost 1
+execute as @r store result score a2 rndgenSeed run data get entity @s UUIDMost 1
+execute as @r store result score a3 rndgenSeed run data get entity @s UUIDMost 1
+execute as @r store result score a4 rndgenSeed run data get entity @s UUIDMost 1
+function randomgen:details/normalize
 
 scoreboard players set random_limit rndgenInput 100
 scoreboard players set random rndgenOutput 0

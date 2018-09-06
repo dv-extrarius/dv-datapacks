@@ -11,7 +11,9 @@ This datapack helps you know where mobs are by giving them an outline visible th
 Moved to https://github.com/dv-extrarius/safemode
 
 # Math
-This datapack provides a few mathematical functions. 'sqrt' works on all positive inputs (and 0) and takes the input in "Value extrepInput" and provides the output in "Sqrt extrepOutput". 'sine' computes the sine of an angle given in degrees * 10000 in the variable "Value extrepInput" and provides the output in "Sine extrepOutput". 'cosine' works similarly to sine, providing the output in "Cosine extrepOutput". 'veclength' calculates the length of a 3d vector, taking inputs in "VecX extrepInput", "VecY extrepInput", and "VecZ extrepInput" and returns the value in "Length extrepOutput" (implementation detail: it also clobbers "Sqrt extrepOutput")
+This datapack provides a few mathematical functions. 'sqrt' works on all positive inputs (and 0) and takes the input in "Value extrepInput" and provides the output in "Sqrt extrepOutput". 'sine' computes the sine and cosine of an angle given in degrees * 10000 in the variable "Value extrepInput" and provides the output in "Sine extrepOutput" and "Cosine extrepOutput" (in the range -100000 to +100000). 'cosine' is an alias for 'sine' and computes both sine and cosine . 'veclength' calculates the length of a 3d vector, taking inputs in "VecX extrepInput", "VecY extrepInput", and "VecZ extrepInput" and returns the value in "Length extrepOutput" (implementation detail: it also clobbers "Sqrt extrepOutput")
+
+The idea and implementation technique for the high-precision sine and cosine was contributed by https://github.com/vdvman1
 
 ## RandomGen (subsumed into math, still in randomgen namespace)
 A long-for-minecraft period random number generator. The period is 2^64, but the generator also reseeds every 60 seconds or every 1200 manual updates.

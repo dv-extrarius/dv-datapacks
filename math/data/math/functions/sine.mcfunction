@@ -1,7 +1,3 @@
-#https://dspguru.com/dsp/tricks/parabolic-approximation-of-sin-and-cos/
-#sine = x^2 * -0.82842712474619 + x + 0.7071067811865475
-#-0.82842712474619 ~= -5741/6930
-
 #Calculate Sine of "Value extrepInput"
 scoreboard players operation theta extrepTemp = Value extrepInput
 scoreboard players add theta extrepTemp 1800000
